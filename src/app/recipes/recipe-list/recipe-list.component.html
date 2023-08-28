@@ -8,15 +8,6 @@
 
 <div class="row">
   <div class="col-xs-12">
-    <a *ngFor="let recipe of recipes" href="#" style="color: inherit;" class="clearfix">
-      <div class="card">
-        <img src="{{recipe.imagePath}}" class="card-img-top img-responsive" alt="{{recipe.name}}">
-        <div class="card-body">
-          <h5 class="card-title">{{recipe.name}}</h5>
-          <p class="card-text">{{recipe.description}}</p>
-        </div>
-      </div>
-    </a>
-    <app-recipe-item></app-recipe-item>
+    <app-recipe-item *ngFor="let recipe of recipes" [recipe]="recipe" (recipeSelected)="onRecipeSelected(recipe)"></app-recipe-item>
   </div>
 </div>
